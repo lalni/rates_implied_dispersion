@@ -1,0 +1,16 @@
+# data
+data/*.csv
+data/*.parquet
+data/*.xlsx
+
+# outputs
+outputs/*.csv
+outputs/*.png
+outputs/*.json
+
+# python
+__pycache__/
+*.pyc
+.venv/
+.env
+.ipynb_checkpoints/
