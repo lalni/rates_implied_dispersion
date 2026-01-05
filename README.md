@@ -14,19 +14,19 @@ The v1/v2 baselines use hand-crafted factors:
 - `Level` ≈ 2Y (bp)
 - `Slope` ≈ 10Y − 2Y (bp)
 
-In v3 we add a more complete curve representation:
+add a more complete curve representation:
 - **PC1 ≈ Level** (parallel shifts)
 - **PC2 ≈ Slope** (twists / steepening–flattening)
 - **PC3 ≈ Curvature** (belly vs wings)
 
-That extra curvature factor is often where “curve shape” regimes show up (e.g., belly-led rallies/selloffs) and can materially change how “fair-value” responds to macro.
+That extra curvature factor is often where “curve shape” regimes show up and can materially change how “fair-value” responds to macro.
 
 ---
 
 ## Data inputs (2 CSV files)
 
 ### 1) `sofrUS.csv` (headerless)
-SOFR curve history. We use:
+SOFR curve history:
 - `date` (col 1)
 - `rate_pct` (col 2)
 - `tenor` (col 6, e.g. `3M`, `2Y`, `10Y`, …)
@@ -89,7 +89,7 @@ This is implemented in `src/model.py` as `expanding_ols_signal(...)`.
 ---
 
 ## Model variants included
-You’ll get all of these in the output table for comparison:
+all of these in the output table for comparison:
 
 - `1f_slope`: `disp_ccc_bb_bp ~ slope_2s10s_bp`
 - `2f_level_slope`: `~ level_2y_bp + slope_2s10s_bp`
